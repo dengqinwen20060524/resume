@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邓钦文 - 后端开发工程师</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f0f2f5;
+            padding: 30px 20px;
+        }
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            display: flex;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+        }
+        /* 左侧栏 */
+        .left-sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #e8ecff 0%, #d4d9fc 100%);
+            padding: 25px 18px;
+            flex-shrink: 0;
+        }
+        .avatar {
+            width: 100%;
+            max-width: 150px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .job-target {
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        .sidebar-section {
+            margin-top: 25px;
+        }
+        .sidebar-title {
+            background: linear-gradient(90deg, #a8b5ff, #9aa5fc);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-icon {
+            width: 18px;
+            text-align: center;
+            color: #667eea;
+        }
+        .skills-list {
+            list-style: none;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .skills-list li {
+            margin-bottom: 6px;
+        }
+        .self-eval-text {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        /* 右侧内容区 */
+        .main-content {
+            flex: 1;
+            padding: 30px 35px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8ecff;
+        }
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #3357d9;
+        }
+        .section-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #e8ecff, transparent);
+            margin-left: 15px;
+        }
+        /* 教育经历 */
+        .edu-item {
+            margin-bottom: 15px;
+        }
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .edu-date {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3357d9;
+        }
+        .edu-school {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3357d9;
+        }
+        .edu-major {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        .edu-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+        }
+        .edu-desc li {
+            margin-bottom: 5px;
+        }
+        /* 项目经历 */
+        .project-item {
+            margin-bottom: 25px;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .project-date {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3357d9;
+        }
+        .project-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3357d9;
+        }
+        .project-role {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .project-desc {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .project-subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            margin: 12px 0 8px;
+        }
+        .project-list {
+            padding-left: 18px;
+        }
+        .project-list li {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .project-list li strong {
+            color: #333;
+        }
+        /* 在校经历 */
+        .school-item {
+            margin-bottom: 15px;
+        }
+        .school-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .school-date {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3357d9;
+        }
+        .school-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3357d9;
+        }
+        .school-role {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .school-list {
+            padding-left: 18px;
+        }
+        .school-list li {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        /* 打印适配 */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: none;
+            }
+            .left-sidebar {
+                width: 260px;
+            }
+            .main-content {
+                padding: 25px 30px;
+            }
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+        }
+        @media (max-width: 768px) {
+            .resume-container {
+                flex-direction: column;
+            }
+            .left-sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- 左侧栏 -->
+        <div class="left-sidebar">
+            <img src="D:\workspace\src\beida\邓钦文.jpg" alt="邓钦文" class="avatar">
+            
+            <div class="name">邓钦文</div>
+            <div class="job-target">意向岗位：后端开发工程师</div>
+            
+            <!-- 基本信息 -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <span>📋</span> 基本信息
+                </div>
+                <ul class="info-list">
+                    <li><span class="info-icon">📱</span> 电话：15803024952</li>
+                    <li><span class="info-icon">📧</span> 邮箱：3687091479@qq.com</li>
+                    <li><span class="info-icon">👤</span> 性别：男</li>
+                    <li><span class="info-icon">🎂</span> 年龄：19</li>
+                    <li><span class="info-icon">🏠</span> 户籍：重庆</li>
+                    <li><span class="info-icon">📍</span> 现所在地：成都</li>
+                    <li><span class="info-icon">🎓</span> 最高学历：大专</li>
+                    <li><span class="info-icon">⭐</span> 政治面貌：共青团员</li>
+                    <li><span class="info-icon"></span> 民族：汉族</li>
+                </ul>
+            </div>
+            
+            <!-- 求职意向 -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <span>🎯</span> 求职意向
+                </div>
+                <ul class="info-list">
+                    <li><strong>意向岗位：</strong>后端开发工程师</li>
+                    <li><strong>求职类型：</strong>实习</li>
+                </ul>
+            </div>
+            
+            <!-- 相关技能 -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <span>🛠️</span> 相关技能
+                </div>
+                <ul class="skills-list">
+                    <li><strong>1. 云原生技术栈：</strong>阿里云 ECS、阿里云 OSS、云环境部署配置、云资源调度优化、自动化运维脚本开发</li>
+                    <li><strong>2. 后端开发相关：</strong>Linux 操作系统、网络协议原理、智能体环境搭建、服务巡检与异常预警机制设计</li>
+                    <li><strong>3. 通用技术能力：</strong>云计算基础架构、计算机网络原理、IT 服务运维流程、多系统场景化落地实施</li>
+                    <li><strong>4. 获得证书：</strong>阿里云 Apsara Clouder 专项技能认证、EF SET B2 中高级证书、中国民用航空局轻型无人机安全操控理论培训合格证明</li>
+                </ul>
+            </div>
+            
+            <!-- 自我评价 -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <span>💬</span> 自我评价
+                </div>
+                <div class="self-eval-text">
+                    计算机网络技术（云计算方向）专业，具备后端开发基础技术能力，熟悉云服务架构与运维逻辑，了解智能体部署落地路径，可适配技术团队协作需求，持续深耕后端技术领域。
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右侧内容区 -->
+        <div class="main-content">
+            <!-- 教育经历 -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🎓</div>
+                    <div class="section-title">教育经历</div>
+                    <div class="section-line"></div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span class="edu-date">2024.09 - 2027.06</span>
+                        <span class="edu-school">四川邮电职业技术学院</span>
+                    </div>
+                    <div class="edu-major">计算机网络技术（云计算方向） | 专科</div>
+                    <ul class="edu-desc">
+                        <li>主修计算机网络原理、云原生技术、Linux 操作系统、Java 程序设计、数据库原理等核心课程，系统掌握后端开发与云服务基础理论</li>
+                        <li>参与云平台搭建、智能体部署等技术实践项目，熟练运用阿里云 ECS、OSS 等云服务工具，具备服务端开发与运维实践能力</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 项目经历 -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">💼</div>
+                    <div class="section-title">项目经历</div>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-date">2024.09 - 2025.01</span>
+                        <span class="project-name">智能体部署与应用实践项目</span>
+                    </div>
+                    <div class="project-role">核心开发成员</div>
+                    <div class="project-desc">
+                        面向运维效率提升需求，联合人工智能研究小组开发适配基础服务场景的智能体应用，探索自动化运维落地路径
+                    </div>
+                    <div class="project-subtitle">主要工作</div>
+                    <ul class="project-list">
+                        <li>负责自动化运维、基础服务类多类型智能体的运行环境搭建，完成依赖组件配置与兼容性调试</li>
+                        <li>对接服务器监控、日志采集等基础服务接口，实现智能体与现有运维体系的打通适配</li>
+                        <li>设计智能体自动巡检规则与异常预警阈值，覆盖服务器性能、服务可用性等核心运维场景</li>
+                        <li>搭建智能体效果验证环境，模拟各类异常场景完成功能测试与逻辑迭代优化</li>
+                    </ul>
+                    <div class="project-subtitle">项目成果</div>
+                    <ul class="project-list">
+                        <li>实现<strong>90% 以上</strong>日常运维巡检场景的自动化执行，单次全量巡检耗时从<strong>2 小时压缩至 15 分钟</strong></li>
+                        <li>异常预警响应速度较人工运维提升<strong>60%</strong>，上线后成功识别<strong>23 次</strong>潜在服务风险，避免故障发生</li>
+                        <li>形成标准化智能体部署流程文档，为后续同类场景的智能运维落地提供可复用参考方案</li>
+                    </ul>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-date">2024.10 - 2025.05</span>
+                        <span class="project-name">云平台独立搭建与运维管理项目</span>
+                    </div>
+                    <div class="project-role">项目负责人</div>
+                    <div class="project-desc">
+                        为满足在校创新创业项目与人工智能研究小组的算力、存储需求，独立搭建并运维基于阿里云的私有云平台
+                    </div>
+                    <div class="project-subtitle">主要工作</div>
+                    <ul class="project-list">
+                        <li>基于阿里云 ECS、OSS、VPC 等云服务完成云环境部署，配置网络策略、访问权限与安全组规则</li>
+                        <li>编写 Shell 自动化脚本，完成资源批量创建、日志自动清理、服务状态巡检等重复操作的自动化执行</li>
+                        <li>设计云资源动态调度规则，根据项目负载情况动态调整算力资源分配，提升资源利用率</li>
+                        <li>建立云平台运维监控体系，配置资源使用率告警阈值，保障平台运行稳定性与数据安全性</li>
+                    </ul>
+                    <div class="project-subtitle">项目成果</div>
+                    <ul class="project-list">
+                        <li>支撑<strong>5 个</strong>在校创新项目的云资源需求，平台上线后连续<strong>6 个月</strong>稳定运行，服务可用性达<strong>99.9%</strong></li>
+                        <li>云资源调度效率提升<strong>40%</strong>，运维重复操作占比从<strong>70% 降至 20%</strong>，整体运维成本降低<strong>35%</strong></li>
+                        <li>输出云平台搭建与运维操作手册，为后续校内同类云环境部署提供标准化参考</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 在校经历 -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🏫</div>
+                    <div class="section-title">在校经历</div>
+                    <div class="section-line"></div>
+                </div>
+                <div class="school-item">
+                    <div class="school-header">
+                        <span class="school-date">2025.05 - 至今</span>
+                        <span class="school-name">人工智能研究小组</span>
+                    </div>
+                    <div class="school-role">核心成员</div>
+                    <ol class="school-list">
+                        <li>参与智能体应用方向研究，梳理运维场景下智能体技术落地路径与应用框架</li>
+                        <li>负责多类型智能体的环境搭建、功能调试及场景化落地，覆盖核心运维场景</li>
+                        <li>实现智能体对基础服务的自动巡检与异常预警，降低人工排查成本</li>
+                        <li>参与小组技术文档编写，整理智能体部署流程规范，覆盖 3 类常见问题解决方案</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
