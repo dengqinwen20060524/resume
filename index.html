@@ -1,160 +1,404 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>邓钦文 - 后端开发工程师</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Microsoft YaHei",sans-serif;line-height:1.8;color:#333;background:#f0f2f5;padding:30px 20px}
-.resume-container{max-width:1000px;margin:0 auto;background:#fff;display:flex;box-shadow:0 5px 30px rgba(0,0,0,.15)}
-.left-sidebar{width:260px;background:linear-gradient(180deg,#e8ecff,#d4d9fc);padding:25px 18px;flex-shrink:0}
-.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-.name{font-size:28px;font-weight:700;color:#333;text-align:center;margin-bottom:8px}
-.job-target{text-align:center;color:#666;font-size:13px;margin-bottom:20px}
-.sidebar-section{margin-top:25px}
-.sidebar-title{background:linear-gradient(90deg,#a8b5ff,#9aa5fc);color:#fff;padding:8px 12px;border-radius:5px;font-size:15px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.info-list{list-style:none}
-.info-list li{font-size:13px;color:#555;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.info-icon{width:18px;text-align:center;color:#667eea}
-.skills-list{list-style:none;font-size:12px;color:#555;line-height:1.8}
-.skills-list li{margin-bottom:6px}
-.self-eval-text{font-size:12px;color:#555;line-height:1.8;text-align:justify}
-.main-content{flex:1;padding:30px 35px}
-.section{margin-bottom:25px}
-.section-header{display:flex;align-items:center;margin-bottom:18px;padding-bottom:8px;border-bottom:2px solid #e8ecff}
-.section-icon{width:32px;height:32px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;margin-right:10px}
-.section-title{font-size:18px;font-weight:700;color:#3357d9}
-.section-line{flex:1;height:2px;background:linear-gradient(90deg,#e8ecff,transparent);margin-left:15px}
-.edu-item,.project-item,.school-item{margin-bottom:15px}
-.edu-header,.school-header,.project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px}
-.edu-date,.school-date,.project-date{font-size:14px;font-weight:700;color:#3357d9}
-.edu-school,.school-name,.project-name{font-size:14px;font-weight:bold;color:#333}
-.edu-major,.project-role,.school-role{color:#666;font-size:13px;margin-bottom:8px}
-.edu-desc,.project-desc{font-size:13px;color:#666;line-height:1.8}
-.project-subtitle{font-size:13px;font-weight:600;color:#555;margin:12px 0 8px}
-.project-list,.school-list,.edu-desc{padding-left:18px}
-.project-list li,.school-list li,.edu-desc li{font-size:13px;color:#666;margin-bottom:6px;line-height:1.6}
-@media print{body{background:#fff;padding:0}.resume-container{box-shadow:none;width:100%;max-width:none}.left-sidebar{width:260px}.main-content{padding:25px 30px}@page{size:A4;margin:10mm}}
-@media(max-width:768px){.resume-container{flex-direction:column}.left-sidebar{width:100%}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>邓钦文 - 后端开发工程师</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f0f2f5;
+            padding: 30px 20px
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            display: flex;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, .15)
+        }
+
+        .left-sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #e8ecff, #d4d9fc);
+            padding: 25px 18px;
+            flex-shrink: 0
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .1)
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 8px
+        }
+
+        .job-target {
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 20px
+        }
+
+        .sidebar-section {
+            margin-top: 25px
+        }
+
+        .sidebar-title {
+            background: linear-gradient(90deg, #a8b5ff, #9aa5fc);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .info-list {
+            list-style: none
+        }
+
+        .info-list li {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .info-icon {
+            width: 18px;
+            text-align: center;
+            color: #667eea
+        }
+
+        .skills-list {
+            list-style: none;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.8
+        }
+
+        .skills-list li {
+            margin-bottom: 6px
+        }
+
+        .self-eval-text {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px 35px
+        }
+
+        .section {
+            margin-bottom: 25px
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8ecff
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            margin-right: 10px
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #3357d9
+        }
+
+        .section-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #e8ecff, transparent);
+            margin-left: 15px
+        }
+
+        .edu-item,
+        .project-item,
+        .school-item {
+            margin-bottom: 15px
+        }
+
+        .edu-header,
+        .school-header,
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .edu-date,
+        .school-date,
+        .project-date {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3357d9
+        }
+
+        .edu-school,
+        .school-name,
+        .project-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333
+        }
+
+        .edu-major,
+        .project-role,
+        .school-role {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 8px
+        }
+
+        .edu-desc,
+        .project-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8
+        }
+
+        .project-subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            margin: 12px 0 8px
+        }
+
+        .project-list,
+        .school-list,
+        .edu-desc {
+            padding-left: 18px
+        }
+
+        .project-list li,
+        .school-list li,
+        .edu-desc li {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+            line-height: 1.6
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0
+            }
+
+            .resume-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: none
+            }
+
+            .left-sidebar {
+                width: 260px
+            }
+
+            .main-content {
+                padding: 25px 30px
+            }
+
+            @page {
+                size: A4;
+                margin: 10mm
+            }
+        }
+
+        @media(max-width:768px) {
+            .resume-container {
+                flex-direction: column
+            }
+
+            .left-sidebar {
+                width: 100%
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="resume-container">
-<div class="left-sidebar">
-<img src="邓钦文.jpg" alt="邓钦文" class="avatar">
-<div class="name">邓钦文</div>
-<div class="job-target">意向岗位：后端开发工程师</div>
-<div class="sidebar-section">
-<div class="sidebar-title"><span>📋</span> 基本信息</div>
-<ul class="info-list">
-<li><span class="info-icon">📱</span> 电话：15803024952</li>
-<li><span class="info-icon">📧</span> 邮箱：3687091479@qq.com</li>
-<li><span class="info-icon">👤</span> 性别：男</li>
-<li><span class="info-icon">🎂</span> 年龄：19</li>
-<li><span class="info-icon">🏠</span> 户籍：重庆</li>
-<li><span class="info-icon">📍</span> 现所在地：成都</li>
-<li><span class="info-icon">🎓</span> 最高学历：大专</li>
-<li><span class="info-icon">⭐</span> 政治面貌：共青团员</li>
-<li><span class="info-icon"></span> 民族：汉族</li>
-</ul>
-</div>
-<div class="sidebar-section">
-<div class="sidebar-title"><span>🎯</span> 求职意向</div>
-<ul class="info-list">
-<li><strong>意向岗位：</strong>后端开发工程师</li>
-<li><strong>求职类型：</strong>实习</li>
-</ul>
-</div>
-<div class="sidebar-section">
-<div class="sidebar-title"><span>🛠️</span> 相关技能</div>
-<ul class="skills-list">
-<li><strong>1. 云原生技术栈：</strong>阿里云 ECS、阿里云 OSS、云环境部署配置、云资源调度优化、自动化运维脚本开发</li>
-<li><strong>2. 后端开发相关：</strong>Linux 操作系统、网络协议原理、智能体环境搭建、服务巡检与异常预警机制设计</li>
-<li><strong>3. 通用技术能力：</strong>云计算基础架构、计算机网络原理、IT 服务运维流程、多系统场景化落地实施</li>
-<li><strong>4. 获得证书：</strong>阿里云 Apsara Clouder 专项技能认证、EF SET B2 中高级证书、无人机理论合格证</li>
-</ul>
-</div>
-<div class="sidebar-section">
-<div class="sidebar-title"><span>💬</span> 自我评价</div>
-<div class="self-eval-text">计算机网络技术（云计算方向）专业，具备后端开发基础技术能力，熟悉云服务架构与运维逻辑，了解智能体部署落地路径，可适配技术团队协作需求。</div>
-</div>
-</div>
-<div class="main-content">
-<div class="section">
-<div class="section-header">
-<div class="section-icon">🎓</div>
-<div class="section-title">教育经历</div>
-<div class="section-line"></div>
-</div>
-<div class="edu-item">
-<div class="edu-header">
-<span class="edu-date">2024.09 - 2027.06</span>
-<span class="edu-school">四川邮电职业技术学院</span>
-</div>
-<div class="edu-major">计算机网络技术（云计算方向） | 专科</div>
-<ul class="edu-desc">
-<li>主修计算机网络、云原生、Linux、Java、数据库等课程</li>
-<li>熟练阿里云ECS/OSS，具备服务部署与运维实战能力</li>
-</ul>
-</div>
-</div>
-<div class="section">
-<div class="section-header">
-<div class="section-icon">💼</div>
-<div class="section-title">项目经历</div>
-<div class="section-line"></div>
-</div>
-<div class="project-item">
-<div class="project-header">
-<span class="project-date">2024.09 - 2025.01</span>
-<span class="project-name">智能体部署与运维自动化项目</span>
-</div>
-<div class="project-role">核心开发</div>
-<div class="project-desc">搭建智能体运行环境，实现服务器自动巡检、异常预警，大幅降低人工运维成本</div>
-<ul class="project-list">
-<li>部署多类智能体依赖，调试兼容问题</li>
-<li>对接监控、日志接口，打通运维体系</li>
-<li>配置自动巡检规则与告警阈值</li>
-<li>实测优化，提升稳定性</li>
-</ul>
-</div>
-<div class="project-item">
-<div class="project-header">
-<span class="project-date">2024.10 - 2025.05</span>
-<span class="project-name">阿里云私有云平台搭建运维</span>
-</div>
-<div class="project-role">项目负责人</div>
-<div class="project-desc">独立搭建云平台，管理ECS/OSS/VPC，写自动化脚本，保障多项目稳定算力</div>
-<ul class="project-list">
-<li>配置网络、安全组、权限策略</li>
-<li>Shell脚本自动化清理、巡检</li>
-<li>动态调度云资源，提高利用率</li>
-<li>建立监控告警，保障长期稳定</li>
-</ul>
-</div>
-</div>
-<div class="section">
-<div class="section-header">
-<div class="section-icon">🏫</div>
-<div class="section-title">在校经历</div>
-<div class="section-line"></div>
-</div>
-<div class="school-item">
-<div class="school-header">
-<span class="school-date">2025.05 - 至今</span>
-<span class="school-name">人工智能研究小组</span>
-</div>
-<div class="school-role">核心成员</div>
-<ul class="school-list">
-<li>研究智能体落地运维场景</li>
-<li>负责环境搭建、调试、部署</li>
-<li>实现自动巡检告警功能</li>
-<li>整理标准部署文档</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+    <div class="resume-container">
+        <div class="left-sidebar">
+            <img src="邓钦文.jpg" alt="邓钦文" class="avatar">
+            <div class="name">邓钦文</div>
+            <div class="job-target">意向岗位：后端开发工程师（AI Agent方向）</div>
+            <div class="sidebar-section">
+                <div class="sidebar-title"><span>📋</span> 基本信息</div>
+                <ul class="info-list">
+                    <li><span class="info-icon">📱</span> 电话：15803024952</li>
+                    <li><span class="info-icon">📧</span> 邮箱：3687091479@qq.com</li>
+                    <li><span class="info-icon">👤</span> 性别：男</li>
+                    <li><span class="info-icon">🎂</span> 年龄：19</li>
+                    <li><span class="info-icon">🏠</span> 户籍：重庆</li>
+                    <li><span class="info-icon">📍</span> 现所在地：成都</li>
+                    <li><span class="info-icon">🎓</span> 最高学历：大专</li>
+                    <li><span class="info-icon">⭐</span> 政治面貌：共青团员</li>
+                    <li><span class="info-icon"></span> 民族：汉族</li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title"><span>🎯</span> 求职意向</div>
+                <ul class="info-list">
+                    <li><strong>意向岗位：</strong>后端开发工程师（AI Agent方向）</li>
+                    <li><strong>求职类型：</strong>实习</li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title"><span>🛠️</span> 相关技能</div>
+                <ul class="skills-list">
+                    <li><strong>1. AI Agent开发：</strong>LangChain框架、Agent工具调用、多Agent协作链路、Prompt Engineering、RAG检索增强生成</li>
+                    <li><strong>2. 大模型本地部署：</strong>Ollama本地部署、vLLM推理加速、模型量化（GGUF格式）、向量数据库（Chroma/FAISS）</li>
+                    <li><strong>3. 智能体平台：</strong>Dify工作流智能体搭建、Coze平台Agent构建、知识库配置、插件开发与工作流编排</li>
+                    <li><strong>4. 后端开发技术：</strong>Python（FastAPI/Flask）、RESTful API设计、Linux系统管理、Shell脚本、Docker容器化部署</li>
+                    <li><strong>5. 云原生运维：</strong>阿里云ECS/OSS/VPC、服务部署与监控告警、自动化运维脚本、CI/CD流程</li>
+                    <li><strong>6. 获得证书：</strong>阿里云Apsara Clouder专项技能认证、EF SET B2中高级证书、无人机理论合格证</li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title"><span>💬</span> 自我评价</div>
+                <div class="self-eval-text">计算机网络技术（云计算方向）专业，具备扎实的Python后端开发与AI Agent工程化能力。熟练使用LangChain框架进行智能体开发，掌握Ollama本地大模型部署全流程，能够独立使用Dify与Coze平台构建工作流智能体应用。具备从模型部署、Agent开发到服务上线的完整实操经验，可适配AI技术团队协作需求。</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🎓</div>
+                    <div class="section-title">教育经历</div>
+                    <div class="section-line"></div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span class="edu-date">2024.09 - 2027.06</span>
+                        <span class="edu-school">四川邮电职业技术学院</span>
+                    </div>
+                    <div class="edu-major">计算机网络技术（云计算方向） | 专科</div>
+                    <ul class="edu-desc">
+                        <li>主修计算机网络、云原生、Linux、Python、数据库、AI应用开发等课程</li>
+                        <li>熟练掌握阿里云ECS/OSS服务部署与运维，具备自动化脚本开发实战能力</li>
+                        <li>课外深入自学大模型应用开发、Agent工程化与智能体平台搭建技术</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">💼</div>
+                    <div class="section-title">项目经历</div>
+                    <div class="section-line"></div>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-date">2025.03 - 2025.09</span>
+                        <span class="project-name">基于LangChain的本地智能Agent系统</span>
+                    </div>
+                    <div class="project-role">核心开发</div>
+                    <div class="project-desc">使用Python+LangChain框架结合Ollama本地部署Qwen2.5大模型，构建具备工具调用与RAG知识库问答能力的智能Agent系统，开发FastAPI接口对外提供标准化服务</div>
+                    <ul class="project-list">
+                        <li>使用LangChain搭建Agent工具调用链路，集成搜索、计算、API请求等多类Tool</li>
+                        <li>Ollama本地部署Qwen2.5（7B/14B）模型，编写Python脚本实现模型加载与推理调用</li>
+                        <li>集成Chroma向量数据库，实现文档分块、Embedding与RAG知识库检索问答</li>
+                        <li>开发FastAPI RESTful接口，封装Agent服务，编写Dockerfile实现容器化部署</li>
+                        <li>编写Shell自动化部署脚本，实现一键启动Ollama服务+Agent后端+前端调试界面</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-date">2025.06 - 2025.12</span>
+                        <span class="project-name">Dify工作流智能体搭建</span>
+                    </div>
+                    <div class="project-role">项目负责人</div>
+                    <div class="project-desc">基于Dify平台搭建多节点工作流智能体，对接本地Ollama部署的大模型API，实现自动化数据处理与智能客服等场景应用</div>
+                    <ul class="project-list">
+                        <li>在Dify中配置本地Ollama模型API端点，打通Dify与自部署大模型的通信链路</li>
+                        <li>设计"知识库检索→LLM推理→工具调用→结果汇总"多节点工作流</li>
+                        <li>编写Python预处理脚本，对接Dify API实现批量数据导入与自动化触发</li>
+                        <li>搭建智能客服场景工作流，实现意图识别、知识库匹配与多轮对话能力</li>
+                        <li>沉淀工作流模板与部署文档，支持团队成员快速复用到其他业务场景</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-date">2025.09 - 2026.03</span>
+                        <span class="project-name">Coze AI智能体应用构建</span>
+                    </div>
+                    <div class="project-role">独立开发</div>
+                    <div class="project-desc">在Coze平台独立构建个性化AI智能体，配置知识库、插件系统与工作流，实现多场景智能对话与任务处理，并发布至Coze商店积累用户反馈迭代优化</div>
+                    <ul class="project-list">
+                        <li>设计智能体人设与Prompt系统，构建专业知识库并上传结构化文档进行训练</li>
+                        <li>配置Coze插件（搜索、代码执行、API调用），扩展智能体工具调用能力</li>
+                        <li>编排"用户输入→意图识别→知识检索→LLM生成→工具执行"工作流节点</li>
+                        <li>编写Python脚本调用Coze Bot API，实现外部系统与Coze智能体的联动集成</li>
+                        <li>发布至Coze商店，根据用户反馈持续迭代优化Prompt与工作流设计</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🏫</div>
+                    <div class="section-title">在校经历</div>
+                    <div class="section-line"></div>
+                </div>
+                <div class="school-item">
+                    <div class="school-header">
+                        <span class="school-date">2025.05 - 至今</span>
+                        <span class="school-name">人工智能研究小组</span>
+                    </div>
+                    <div class="school-role">核心成员</div>
+                    <ul class="school-list">
+                        <li>主导本地大模型部署方案研究，实践Ollama与vLLM多种推理引擎的部署配置</li>
+                        <li>负责LangChain Agent技术攻关，编写Python示例代码演示Agent工具调用与RAG实现</li>
+                        <li>搭建Dify+Ollama本地智能体实验平台，供小组成员学习与二次开发</li>
+                        <li>整理标准化部署文档与最佳实践指南，指导组员快速上手Agent开发全流程</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
